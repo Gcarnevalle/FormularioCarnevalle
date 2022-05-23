@@ -1,0 +1,16 @@
+<form [formGroup]="formEstudiante" (ngSubmit)="submit()" class="m-3 col-lg-6">
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" id="nombre" formControlName="nombre" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Edad</label>
+        <input type="text" id="edad" formControlName="edad" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Curso</label>
+        <input type="text" id="curso" formControlName="curso" class="form-control">
+    </div>
+
+    <button type="submit">Submit</button>
+</form>

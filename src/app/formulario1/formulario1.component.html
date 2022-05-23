@@ -1,0 +1,21 @@
+<form [formGroup]="formularioContacto" (ngSubmit)="submit()">
+    Nombre: <input type="text" formControlName="nombre">
+    <span *ngIf="formularioContacto.get('nombre')?.errors?.['required']">
+        Este campo es requerido
+    </span>
+    <span *ngIf="formularioContacto.get('nombre')?.errors?.['minlength']">
+        Este campo como minimo debe de tener 3 caracteres
+    </span>
+    Email: <input type="text" formControlName="email">
+    <span *ngIf="formularioContacto.get('email')?.errors?.['email']">
+        Por favor ingrese un correo valido
+    </span>
+    Mensaje: <input type="text" formControlName="mensaje">
+    <span *ngIf="formularioContacto.get('mensaje')?.errors?.['maxlength']">
+        Por favor ingrese menos de 15 caracteres
+    </span>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<div #myTestDiv>
+    {{formularioContacto.value | json}}
+</div>

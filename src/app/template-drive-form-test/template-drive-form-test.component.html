@@ -1,0 +1,12 @@
+<form #formContacto="ngForm" (ngSubmit)="submit(formContacto.value)">
+    <label>Nombre</label>
+    <input type="text" id="nombre" [(ngModel)]="personaModel.nombre" required #nombre="ngModel" name="nombre">
+    <div [hidden]="nombre.valid || nombre.pristine">
+        Este es campo requerido
+    </div>
+    <label>Apellido</label>
+    <input type="text" id="apellido" [(ngModel)]="personaModel.apellido" name="apellido">
+    <label>Edad</label>
+    <input type="text" id="edad" [(ngModel)]="personaModel.edad" name="edad">
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
